@@ -1,0 +1,55 @@
+[33mcommit c0613e1ccd927fc2d0411fbc16782eb20c6c307e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: mbroda <174748@student.uwm.edu.pl>
+Date:   Thu Oct 12 09:18:36 2023 +0200
+
+    usuwanie czesc dalsza
+
+[33mcommit 3ee669920746d01dc636eef8ec827e8ab697c9dc[m
+Merge: 5f12743 969bcac
+Author: mbroda <174748@student.uwm.edu.pl>
+Date:   Thu Oct 12 09:13:06 2023 +0200
+
+    Merge remote-tracking branch 'refs/remotes/origin/master' into fix_001
+
+[33mcommit 5f12743df0cc5fcd81eaec9ae6ba6ff49dc9b7f0[m
+Author: mbroda <174748@student.uwm.edu.pl>
+Date:   Thu Oct 12 09:10:45 2023 +0200
+
+    usuwanie
+
+[33mcommit 969bcac39555ceea39c2a9c67f4500c9d5011b6c[m
+Author: mbroda <174748@student.uwm.edu.pl>
+Date:   Thu Oct 12 09:08:53 2023 +0200
+
+    made new text file
+
+[33mcommit ac25d834f5122854414f6f71173f20474da26934[m
+Merge: a971c07 25abbb8
+Author: mbroda <174748@student.uwm.edu.pl>
+Date:   Thu Oct 12 09:00:18 2023 +0200
+
+    after dev merge
+
+[33mcommit 25abbb877ceb00694d291ccda4bebe139432dbe8[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m
+Author: mbroda <174748@student.uwm.edu.pl>
+Date:   Thu Oct 12 08:54:17 2023 +0200
+
+    zmiana pliku w dev
+
+[33mcommit a971c0739c5ae8ad7b59529fbff68f54f5e5da02[m
+Author: Michał <147035736+kotekloltrzy@users.noreply.github.com>
+Date:   Thu Oct 12 08:36:56 2023 +0200
+
+    Update plik.txt
+
+[33mcommit 528e852bbc35eb86aeefd9ce3e67364b08fbfa15[m
+Author: mbroda <174748@student.uwm.edu.pl>
+Date:   Thu Oct 5 10:26:38 2023 +0200
+
+    testowanie edytowania
+
+[33mcommit a9a36d65e144a9a2f210150dcb500dc7925f6260[m
+Author: mbroda <174748@student.uwm.edu.pl>
+Date:   Thu Oct 5 09:18:27 2023 +0200
+
+    initial commit
