@@ -96,5 +96,35 @@ alter table marynarz add primary key(pesel);
 #### Punkt a
 
 ```sql
+update postac set statek=default;
+```
 
+#### Punkt b
+
+```sql
+delete from postac where rodzaj='wiking' and nazwa != 'Bjorn' order by id_postaci asc limit 1;
+```
+
+#### Punkt c
+
+```sql
+delete from statek;
+```
+
+#### Punkt d
+
+```sql
+drop table statek;
+```
+
+#### Punkt e
+
+```sql
+create table zwierz (id_zwierza int primary key auto_increment not null, nazwa varchar(60), wiek int);
+```
+
+#### Punkt f
+
+```sql
+insert into zwierz select id_postaci, nazwa, wiek from postac where rodzaj='ptak' or rodzaj='syrena' or rodzaj='waz';
 ```
