@@ -21,8 +21,10 @@ alter table postac drop primary key;
 ```sql
 # krok 1
 alter table postac add column pesel char(11) first;
+
 # krok 2
 update postac set pesel='73947295630' + id_postaci;
+
 # krok 3
 alter table postac add primary key(pesel);
 ```
