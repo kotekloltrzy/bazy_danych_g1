@@ -41,5 +41,14 @@ insert into postac values('10174857900', 10, 'Gertuda Nieszczera', 'syrena', def
 # Zadanie 3
 #### Punkt a
 ```sql
+update postac set statek='zaglowiec' where nazwa like '%a%';
+```
 
+#### Punkt b
+```sql
+update statek set max_ladownosc=max_ladownosc * 0.7 where year(data_wodowania) between 1901 and 2000;
+```
+#### Punkt c
+```sql
+alter table postac add check(wiek <= 1000);
 ```
