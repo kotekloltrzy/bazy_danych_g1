@@ -18,6 +18,7 @@ ALTER TABLE postac modify id_postaci int;
 alter table postac drop primary key;
 ```
 # Zadanie 2
+#### Punkt a
 ```sql
 # krok 1
 alter table postac add column pesel char(11) first;
@@ -27,4 +28,18 @@ update postac set pesel='73947295630' + id_postaci;
 
 # krok 3
 alter table postac add primary key(pesel);
+```
+#### Punkt b
+```sql
+alter table postac modify rodzaj enum('wiking','ptak','kobieta','syrena');
+```
+#### Punkt c
+```sql
+insert into postac values('10174857900', 10, 'Gertuda Nieszczera', 'syrena', default, default, default, default)
+```
+
+# Zadanie 3
+#### Punkt a
+```sql
+
 ```
