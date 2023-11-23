@@ -1,5 +1,5 @@
 # Zadanie 1
-## Punkt a
+### Punkt a
 ```sql
 delete from postac where rodzaj="wiking" and nazwa != "Bjorn" order by data_ur asc limit 2;
 
@@ -10,7 +10,7 @@ ALTER TABLE postac change id_postaci id_postaci int; # zmienia też nazwę
 ALTER TABLE postac modify id_postaci int;
 
 ```
-## Punkt b
+### Punkt b
 ```sql
 
 ```
