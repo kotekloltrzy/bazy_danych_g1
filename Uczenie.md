@@ -121,7 +121,7 @@ update postac set statek=default;
 ```sql
 delete from statek;
 ```
-# Skopiowanie do tabeli konkrete pozycje
+## Skopiowanie do tabeli konkretnych pozycji
 ```sql
 insert into zwierz select id_postaci, nazwa, wiek from postac where rodzaj='ptak' or rodzaj='syrena' or rodzaj='waz';
 ```
