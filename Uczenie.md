@@ -1,4 +1,4 @@
-# Tworzenie tabeli
+## Tworzenie tabeli
 ```sql
  create table postac
 (id_postaci int primary key auto_increment, 
@@ -8,7 +8,7 @@ data_ur date,
 wiek int unsigned);
 ```
 
-# Tworzenie klucza obcego
+## Tworzenie klucza obcego
 ```sql
 create table walizka
 (id_walizki int primary key auto_increment,
@@ -17,7 +17,7 @@ kolor enum('rozowy','czerwony','teczowy','zolty'),
 id_wlasciciela int,
 foreign key(id_wlasciciela) references postac(id_postaci) on delete cascade);
 ```
-# Kilka kluczów głównych
+## Kilka kluczów głównych
 ```sql
 create table izba
 (adres_budynku varchar(100),
@@ -27,15 +27,15 @@ wlasciciel int,
 primary key(adres_budynku, nazwa_izby),
 foreign key(wlasciciel) references postac(id_postaci) on delete set null);
 ```
-# Dodawanie pozycji do tabeli
+## Dodawanie pozycji do tabeli
 ```sql
 insert into postac values(default,'Drozd','ptak','1600-11-09',423);
 ```
-# Aktualizowanie pozycji tabeli
+## Aktualizowanie pozycji tabeli
 ```sql
 update postac set wiek=88 where id_postaci=5;
 ```
-# Ustawianie pozycji domyślnych
+## Ustawianie pozycji domyślnych
 ```sql
 create table przetwory (
 id_przetworu INT PRIMARY KEY auto_increment, 
@@ -47,30 +47,30 @@ id_konsumenta INT,
 foreign key (id_wykonawcy) references postac(id_postaci) on delete cascade, 
 foreign key (id_konsumenta) references postac(id_postaci) on delete cascade);
 ```
-# Dodawanie kolumn do tabeli
+## Dodawanie kolumn do tabeli
 ```sql
 alter table postac add column funkcja varchar(64);
 ```
-# Usuwanie pozycji z tabeli
+## Usuwanie pozycji z tabeli
 ```sql
 delete from izba where nazwa_izby="spizarnia";
 ```
-# Usuwanie tabeli
+## Usuwanie tabeli
 ```sql
 drop table izba;
 ```
-# Bardziej zaawansowane usuwanie pozycji z tabeli
+## Bardziej zaawansowane usuwanie pozycji z tabeli
 ```sql
 delete from postac where rodzaj="wiking" and nazwa != "Bjorn" order by data_ur asc limit 2;
 ```
 
-# Usuwanie klucza głównego
+## Usuwanie klucza głównego
 ```sql
 alter table przetwory drop foreign key przetwory_ibfk_1;
 alter table postac modify id_postaci int;
 alter table postac drop primary key;
 ```
-# Dodawanie nowego klucza głównego
+## Dodawanie nowego klucza głównego
 #### krok 1
 ```sql
 alter table postac add column pesel char(11) first;
@@ -84,7 +84,7 @@ update postac set pesel='73947295630' + id_postaci;
 alter table postac add primary key(pesel);
 ```
 
-# Edytowanie kolumny typu "enum"
+## Edytowanie kolumny typu "enum"
 ```sql
 alter table postac modify rodzaj enum('wiking','ptak','kobieta','syrena');
 ```
@@ -100,7 +100,7 @@ update statek set max_ladownosc=max_ladownosc * 0.7 where year(data_wodowania) b
 ```sql
 alter table postac add check(wiek <= 1000);
 ```
-# Tworzenie tabeli identycznej do innej
+## Tworzenie tabeli identycznej do innej
 #### Utworzenie tabli
 ```sql
 create table marynarz like postac;
@@ -113,11 +113,11 @@ insert into marynarz select * from postac where statek is not NULL;
 ```sql
 alter table marynarz add primary key(pesel);
 ```
-# Ustawinie wszystkich pozycji na domyślną
+## Ustawinie wszystkich pozycji na domyślną
 ```sql
 update postac set statek=default;
 ```
-# Usunięcie wszystkich pozycji z tabeli
+## Usunięcie wszystkich pozycji z tabeli
 ```sql
 delete from statek;
 ```
