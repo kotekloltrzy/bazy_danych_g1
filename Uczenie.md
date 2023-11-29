@@ -88,15 +88,15 @@ alter table postac add primary key(pesel);
 ```sql
 alter table postac modify rodzaj enum('wiking','ptak','kobieta','syrena');
 ```
-# Postać z literką "a" w nazwie
+## Postać z literką "a" w nazwie
 ```sql
 update postac set statek='zaglowiec' where nazwa like '%a%';
 ```
-# Zmniejszenie ładowności o 30% u statków utworzonych między konkretnymi latami 
+## Zmniejszenie ładowności o 30% u statków utworzonych między konkretnymi latami 
 ```sql
 update statek set max_ladownosc=max_ladownosc * 0.7 where year(data_wodowania) between 1901 and 2000;
 ```
-# Zablokowanie dodawania postaci starszych niż 1000 lat
+## Zablokowanie dodawania postaci starszych niż 1000 lat
 ```sql
 alter table postac add check(wiek <= 1000);
 ```
