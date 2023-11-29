@@ -71,14 +71,16 @@ alter table postac modify id_postaci int;
 alter table postac drop primary key;
 ```
 # Dodawanie nowego klucza głównego
+#### krok 1
 ```sql
-# krok 1
 alter table postac add column pesel char(11) first;
-
-# krok 2
+```
+#### krok 2
+```sql
 update postac set pesel='73947295630' + id_postaci;
-
-# krok 3
+```
+#### krok 3
+```sql
 alter table postac add primary key(pesel);
 ```
 
