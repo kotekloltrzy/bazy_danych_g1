@@ -22,3 +22,16 @@ select * from zasob where rodzaj='jedzenie';
 ```sql
 select idZasobu, ilosc from ekwipunek where idKreatury = 1 or 3 or 5;
 ```
+# Zadanie 2
+#### 1)
+```sql
+select * from kreatura where rodzaj <> 'wiedzma' and udzwig >= 50;
+```
+#### 2)
+```sql
+select * from zasob where waga between 2 and 5;
+```
+#### 3)
+```sql
+select * from kreatura where nazwa like '%or%' and waga between 30 and 70;
+```
