@@ -35,3 +35,16 @@ select * from zasob where waga between 2 and 5;
 ```sql
 select * from kreatura where nazwa like '%or%' and waga between 30 and 70;
 ```
+# Zadanie 3
+#### 1)
+```sql
+select * from zasob where month(dataPozyskania) between 8 and 9;
+```
+#### 2)
+```sql
+select * from zasob order by waga;
+```
+#### 3)
+```sql
+select * from kreatura where dataUr is not Null order by dataUr limit 5;
+```
