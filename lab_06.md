@@ -48,3 +48,31 @@ select * from zasob order by waga;
 ```sql
 select * from kreatura where dataUr is not Null order by dataUr limit 5;
 ```
+# Zadanie 4
+#### 1)
+```sql
+select distinct rodzaj from zasob;
+```
+#### 2)
+```sql
+select concat(nazwa,' ',rodzaj) as 'nazwa rodzaj' from kreatura where rodzaj like 'wi%';
+```
+#### 3)
+```sql
+select idZasobu, nazwa, waga*ilosc as calkowita_waga, dataPozyskania, rodzaj from zasob where year(dataPozyskania) between 2000 and 2007;
+```
+# Zadanie 5
+#### 1)
+```sql
+select idZasobu, nazwa, waga*0.7*ilosc as wlasciwe_jedzenie, waga*0.3*ilosc as odpadki_jedzenia, dataPozyskania, rodzaj from zasob where rodzaj = 'jedzenie';
+```
+#### 2)
+```sql
+select * from zasob where rodzaj is Null;
+```
+
+#### 3)
+```sql
+select distinct * from zasob where nazwa like 'Ba%' or '%os' order by nazwa;
+```
+
