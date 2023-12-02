@@ -125,3 +125,11 @@ delete from statek;
 ```sql
 insert into zwierz select id_postaci, nazwa, wiek from postac where rodzaj='ptak' or rodzaj='syrena' or rodzaj='waz';
 ```
+## Wybranie kombinacji dwóch kolumn
+```sql
+select idZasobu, nazwa, waga*ilosc as calkowita_waga, dataPozyskania, rodzaj from zasob;
+```
+## Wybranie po jednym rodzaju pozycji
+```sql
+select distinct rodzaj from zasob;
+```
