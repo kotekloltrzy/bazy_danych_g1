@@ -41,3 +41,16 @@ select k.nazwa from kreatura k left join ekwipunek e on k.idKreatury=e.idKreatur
 ```sql
 select nazwa, idKreatury from kreatura where idKreatury not in (select distinct idKreatury from ekwipunek where idKreatury is not null);
 ```
+# Zadanie 4
+#### 1) wyswietlić nazwy wikingów , ktorzy urodzili sie w latach 70-tych XVII wieku oraz nazwy zasobów, które posiadają (użyj natural joina jeśli się da)
+```sql
+
+```
+#### 2) wyświetlic nazwy 5 najmłodszych kreatur, które w ekwipunku posiadają jedzenie
+```sql
+
+```
+#### 3) wypisz obok siebie nazwy kreatur, których numer idKreatury różni się o 5 (np Bjorn - Astrid, Brutal Ibra itd)
+```sql
+
+```
