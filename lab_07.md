@@ -62,5 +62,8 @@ select k.nazwa, avg(e.ilosc * z.waga) as srednia_waga from kreatura k inner join
 
 #### 2) Dla każdego rodzaju kreatury wyświetlić nazwę, datę urodzenia i rodzaj najmłodszej i najstarszej kreatury.
 ```sql
-
+select k.rodzaj, nazwa, n.najstarsza, n.najmlodsza from (select rodzaj, min(dataUr) as najstarsza, max(dataUr) as najmlodsza from kreatura group by rodzaj) n,kreatura k where n.najstarsza=k.dataUr or n.najmlodsza=k.dataUr;
 ```
+
+# Zadanie 6
+#### 1) 
