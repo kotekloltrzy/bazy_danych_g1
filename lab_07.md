@@ -52,5 +52,10 @@ select k.nazwa from kreatura k inner join ekwipunek e on k.idKreatury=e.idKreatu
 ```
 #### 3) wypisz obok siebie nazwy kreatur, których numer idKreatury różni się o 5 (np Bjorn - Astrid, Brutal Ibra itd)
 ```sql
+select concat(k1.nazwa,' -' , k2.nazwa) as pary from kreatura k1 inner join kreatura k2 on k1.idKreatury-k2.idKreatury = 5;
+```
+# Zadanie 5
+#### 1) Dla każdego rodzaju kreatury wyświetlić średnią wagę zasobów, jaką posiadają w ekwipunku, jeżeli kreatura nie jest ani małpą ani wężem i ilośc ekwipunku jest poniżej 30.
+```sql
 
 ```
