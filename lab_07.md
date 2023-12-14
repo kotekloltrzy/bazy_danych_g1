@@ -57,5 +57,10 @@ select concat(k1.nazwa,' -' , k2.nazwa) as pary from kreatura k1 inner join krea
 # Zadanie 5
 #### 1) Dla każdego rodzaju kreatury wyświetlić średnią wagę zasobów, jaką posiadają w ekwipunku, jeżeli kreatura nie jest ani małpą ani wężem i ilośc ekwipunku jest poniżej 30.
 ```sql
+select k.nazwa, avg(e.ilosc * z.waga) as srednia_waga from kreatura k inner join ekwipunek e on k.idKreatury=e.idKreatury inner join zasob z on e.idZasobu=z.idZasobu where k.rodzaj not in ('malpa','waz') and e.ilosc < 30 group by k.nazwa;
+```
+
+#### 2) Dla każdego rodzaju kreatury wyświetlić nazwę, i rodzaj najmłodszej i najstarszej kreatury.
+```sql
 
 ```
