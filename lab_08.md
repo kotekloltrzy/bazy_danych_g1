@@ -13,3 +13,7 @@ select w.nazwa, sum(e.ilosc) as suma_iloci_ekwipunku from wyprawa w left join uc
 ```sql
 select w.nazwa, count(u.id_uczestnika) as ilosc_uczestnikow from wyprawa w left join uczestnicy u on w.id_wyprawy=u.id_wyprawy group by w.id_wyprawy;
 ```
+#### 2)
+```sql
+select s.nazwa, w.data_rozpoczecia, e.kolejnosc, k.nazwa as kierownik from etapy_wyprawy e inner join wyprawa w on e.idWyprawy=w.id_wyprawy inner join kreatura k on k.idKreatury=w.kierownik join sektor s on e.sektor=s.id_sektora order by w.data_rozpoczecia asc, e.kolejnosc;
+```
