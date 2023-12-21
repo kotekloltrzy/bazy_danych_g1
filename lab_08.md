@@ -20,5 +20,30 @@ select s.nazwa, w.data_rozpoczecia, e.kolejnosc, k.nazwa as kierownik from etapy
 # Zadanie 3
 #### 1) Wypisać ile razy dany sektor był odwiedzany w trackie wyprawy
 ```sql
+select s.nazwa, count(ew.sektor) as ilosc_odwiedzin from sektor s inner join etapy_wyprawy ew on s.id_sektora=ew.sektor group by sektor;
+```
+##### z funkcją ifnull:
+```sql
+select s.nazwa, ifnull(count(ew.sektor),'brak') as ilosc_odwiedzin from sektor s inner join etapy_wyprawy ew on s.id_sektora=ew.sektor group by sektor;
+```
+#### 2) W zależności od ilości wypraw w jakich brała udział dana kreatura wypisz: nazwa kreatury, 'bral udzial w wyprawie' gdy liczba wypraw >0, 'nie bral udzialu w wyprawie' gdy liczba wypraw <0
+```sql
+select k.nazwa, if(count(u.id_uczestnika)>0, 'bral udzial w wyprawie','nie bral udzialu w wyprawie') as 'czy bral udzial' from uczestnicy u right join kreatura k on k.idKreatury=u.id_uczestnika group by k.nazwa;
+```
+
+# Zadanie 4
+#### 1) Dla każdej wyprawy wypisz jej nazwe oraz ilośc liczby znaków, które zostały użyte przy pisaniu dziennika, jeśli ta liczba znaków jest mniejsza od 400.
+```sql
+select w.nazwa, if(sum(length(ew.dziennik))<400,(sum(length(ew.dziennik))),'wiecej niz 400' ) as 'ilosc znakow w dzienniku' from wyprawa w inner join etapy_wyprawy ew on w.id_wyprawy=ew.idWyprawy group by w.nazwa;
+```
+#### 2) Dla każdej wyprawy podaj średnią wagę zasobów, jakie były niesione przez uczestników tej wyprawy.
+```sql
+select w.id_wyprawy, w.nazwa,(sum(e.ilosc*z.waga)/(count(u.id_uczestnika))) as 'srednia waga niesiona przez uczestnika' from zasob z inner join ekwipunek e on e.idZasobu=z.idZasobu inner join uczestnicy u on id_uczestnika=e.idKreatury inner join wyprawa w on w.id_wyprawy=u.id_wyprawy group by id_wyprawy;
+```
+
+# Zadanie 5
+#### 1) Wypisac nazwę kreatury oraz ile miała dni (wiek w dniach) w momencie rozpoczęcia wyprawy, dla wypraw, które przechodziły przez chatkę dziadka
+```sql
 
 ```
+
