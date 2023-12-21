@@ -44,6 +44,6 @@ select w.id_wyprawy, w.nazwa,(sum(e.ilosc*z.waga)/(count(u.id_uczestnika))) as '
 # Zadanie 5
 #### 1) Wypisac nazwę kreatury oraz ile miała dni (wiek w dniach) w momencie rozpoczęcia wyprawy, dla wypraw, które przechodziły przez chatkę dziadka
 ```sql
-
+select k.nazwa, datediff(w.data_rozpoczecia, k.dataUr) from kreatura k inner join uczestnicy u on k.idKreatury=u.id_uczestnika inner join wyprawa w on w.id_wyprawy=u.id_wyprawy inner join etapy_wyprawy ew on w.id_wyprawy=ew.idWyprawy where ew.sektor=7;
 ```
 
