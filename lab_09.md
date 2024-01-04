@@ -42,7 +42,7 @@ delimiter ;
 # Zadanie 4
 #### 1) Stwórz tabelę "system alarmowy" z polami, id_alarmu, wiadomosc.
 ```sql
-create table system_alarmowy(id_alarmu int primary key auto_increment, wiadomosc varchar(100))
+create table system_alarmowy(id_alarmu int primary key auto_increment, wiadomosc varchar(100));
 ```
 #### 2) Dodaj wyzwalacz, który będzie sprawdzał czy w tabeli wyprawy pojawiła się misja, w której bierze udział teściowa oraz czy jednym z sektorów misji jest domek dziadka, Jeżeli w/w zaistnieje wyzwalacz wstawi rekord do tabeli "system_alarmowy" z treścią "Teściowa nadchodzi"
 ```sql
