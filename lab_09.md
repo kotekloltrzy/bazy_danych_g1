@@ -38,3 +38,53 @@ delimiter ;
 ```sql
 
 ```
+
+# Zadanie 4
+#### 1) Stwórz tabelę "system alarmowy" z polami, id_alarmu, wiadomosc.
+```sql
+create table system_alarmowy(id_alarmu int primary key auto_increment, wiadomosc varchar(100))
+```
+#### 2) Dodaj wyzwalacz, który będzie sprawdzał czy w tabeli wyprawy pojawiła się misja, w której bierze udział teściowa oraz czy jednym z sektorów misji jest domek dziadka, Jeżeli w/w zaistnieje wyzwalacz wstawi rekord do tabeli "system_alarmowy" z treścią "Teściowa nadchodzi"
+```sql
+DELIMITER $$
+
+CREATE TRIGGER uczestnicy_after_insert
+AFTER INSERT ON uczestnicy
+FOR EACH ROW
+BEGIN
+	DECLARE tesciowa varchar(100);
+	DECLARE sektor_id integer;
+	DECLARE czy_tesciowa bool;
+	DECLARE czy_chata_dziadka bool;
+	SET tesciowa = 'Tesciowa';
+	SET sektor_id = 7;
+	
+/** sprawdzanie czy tesciowa bierze udział w wyprawie **/
+    
+IF tesciowa in (
+	SELECT nazwa from kreatura WHERE idKreatury in 
+	( SELECT id_uczestnika from uczestnicy where id_wyprawy=NEW.id_wyprawy)) 
+	
+THEN 
+    
+	SET czy_tesciowa = true;
+	END IF;
+    
+IF sektor_id in (
+	SELECT sektor FROM etapy_wyprawy WHERE idWyprawy=NEW.id_wyprawy
+	) 
+THEN 
+	SET czy_chata_dziadka = true;
+END IF;
+    
+IF czy_tesciowa AND czy_chata_dziadka
+    
+THEN  
+	INSERT INTO system_alarmowy VALUES(default,'Tesciowa nadchodzi',default);
+END IF;
+
+END
+$$
+
+DELIMITER ;
+```
