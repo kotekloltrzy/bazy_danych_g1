@@ -10,9 +10,7 @@ begin
 	then
 		set new.waga = 1;
 	end if;
-
-end
-//
+	end //
 delimiter ;
 ```
 # Zadanie 2
