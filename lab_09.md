@@ -34,7 +34,7 @@ delimiter ;
 ```sql
 
 ```
-#### 2) Napisz funkcję, która będzie pobierała tekst i zwracała go bez wielkich liter
+#### 2) Napisz funkcję, która będzie pobierała tekst i zwracała go z wielkich liter
 ```sql
 
 ```
