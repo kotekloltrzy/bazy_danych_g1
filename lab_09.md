@@ -32,7 +32,13 @@ delimiter ;
 # Zadanie 3
 #### 1) Napisz procedurę o nazwie "eliksir siły", która będzie podnosiła wartość udzwig z tabeli kreatura o 20% na podstawie id_kreatury przekazywanego jako parametr.
 ```sql
+delimiter //
+create procedure eliksir_sily (in id int)
+begin
+	update kreatura set udzwig = udzwig*1.2 where idKreatury = id;
+end//
 
+delimiter ;
 ```
 #### 2) Napisz funkcję, która będzie pobierała tekst i zwracała go z wielkich liter
 ```sql
