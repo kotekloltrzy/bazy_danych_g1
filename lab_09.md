@@ -42,7 +42,13 @@ delimiter ;
 ```
 #### 2) Napisz funkcję, która będzie pobierała tekst i zwracała go z wielkich liter
 ```sql
+delimiter $$
+create procedure duze_litery (in tekst varchar(255))
+begin
+	select upper(tekst);
+end$$
 
+delimiter ;
 ```
 
 # Zadanie 4
