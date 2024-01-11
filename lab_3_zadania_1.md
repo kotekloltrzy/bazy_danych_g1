@@ -16,5 +16,9 @@ select k.nazwa_kategori, count(t.kategoria) as 'ilość' from kategoria k inner 
 ```
 # Zadanie 5 Wyświetl nazwę kategorii i w kolejnej kolumnie listę wszystkich produktów należącej do każdej z nich.
 ```sql
+select k.nazwa_kategori, group_concat(t.nazwa_towaru) as 'produkty' from towar t inner join kategoria k on k.id_kategori=t.kategoria group by t.kategoria;
+```
+# Zadanie 6 Wyświetl średnie zarobki pracowników za zaokrągleniem do 2 miejsc po przecinku.
+```sql
 
 ```
