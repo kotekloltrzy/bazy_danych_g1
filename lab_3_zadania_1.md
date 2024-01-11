@@ -28,5 +28,13 @@ select round(avg(if((year(current_date())-year(data_zatrudnienia))>4, pensja, 0)
 ```
 # Zadanie 8 Wyświetl 10 najczęściej sprzedawanych produktów.
 ```sql
-
+select t.nazwa_towaru, sum(pz.ilosc) as 'ilość sprzedanych kopii' from pozycja_zamowienia pz inner join towar t on pz.towar=t.id_towaru group by towar order by sum(pz.ilosc) desc limit 10;
+```
+# Zadanie 9 Wyświetl numer zamówienia, jego wartość (suma wartości wszystkich jego pozycji) zarejestrowanych w pierwszym kwartale 2017 roku.
+```sql
+select z.numer_zamowienia, sum(pz.ilosc*pz.cena) as 'wartość' from zamowienie z inner join pozycja_zamowienia pz on z.id_zamowienia=pz.zamowienie where z.data_zamowienia between '2017-01-01' and '2017-03-31' group by z.numer_zamowienia;
+```
+# Zadanie 10 Wyświetl imie, nazwisko i sumę wartości zamówień, które dany pracownik dodał. Posortuj malejąco po sumie.
+```sql
+select p.imie, p.nazwisko, sum(pz.ilosc*pz.cena) as 'wartość' from zamowienie z inner join pozycja_zamowienia pz on z.id_zamowienia=pz.zamowienie inner join pracownik p on p.id_pracownika=z.pracownik_id_pracownika group by p.id_pracownika;
 ```
