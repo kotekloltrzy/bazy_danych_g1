@@ -23,3 +23,10 @@ select k.nazwa_kategori, group_concat(t.nazwa_towaru) as 'produkty' from towar t
 select round(avg(pensja),2) as 'średnia pensja' from pracownik;
 ```
 # Zadanie 7 Wyświetl średnie zarobki pracowników, którzy pracują co najmniej od 5 lat.
+```sql
+select round(avg(if((year(current_date())-year(data_zatrudnienia))>4, pensja, 0)),2) as 'średnie zarobki pracowników, którzy pracują co najmniej 5 lat' from pracownik;
+```
+# Zadanie 8 Wyświetl 10 najczęściej sprzedawanych produktów.
+```sql
+
+```
