@@ -36,5 +36,5 @@ select z.numer_zamowienia, sum(pz.ilosc*pz.cena) as 'wartość' from zamowienie 
 ```
 # Zadanie 10 Wyświetl imie, nazwisko i sumę wartości zamówień, które dany pracownik dodał. Posortuj malejąco po sumie.
 ```sql
-select p.imie, p.nazwisko, sum(pz.ilosc*pz.cena) as 'wartość' from zamowienie z inner join pozycja_zamowienia pz on z.id_zamowienia=pz.zamowienie inner join pracownik p on p.id_pracownika=z.pracownik_id_pracownika group by p.id_pracownika order by sum(pz.ilosc*pz.cena) desc;
+select p.imie, p.nazwisko, sum(pz.ilosc*pz.cena) as 'wartość' from zamowienie z inner join pozycja_zamowienia pz on z.id_zamowienia=pz.zamowienie inner join pracownik p on p.id_pracownika=z.pracownik_id_pracownika group by z.pracownik_id_pracownika order by sum(pz.ilosc*pz.cena) desc;
 ```
