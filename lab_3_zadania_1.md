@@ -20,5 +20,6 @@ select k.nazwa_kategori, group_concat(t.nazwa_towaru) as 'produkty' from towar t
 ```
 # Zadanie 6 Wyświetl średnie zarobki pracowników za zaokrągleniem do 2 miejsc po przecinku.
 ```sql
-
+select round(avg(pensja),2) as 'średnia pensja' from pracownik;
 ```
+# Zadanie 7 Wyświetl średnie zarobki pracowników, którzy pracują co najmniej od 5 lat.
