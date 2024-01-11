@@ -28,7 +28,10 @@ select round(avg(if((year(current_date())-year(data_zatrudnienia))>4, pensja, 0)
 ```
 # Zadanie 8 Wyświetl 10 najczęściej sprzedawanych produktów.
 ```sql
-select t.nazwa_towaru, sum(pz.ilosc) as 'ilość sprzedanych kopii' from pozycja_zamowienia pz inner join towar t on pz.towar=t.id_towaru group by towar order by sum(pz.ilosc) desc limit 10;
+select t.nazwa_towaru, sum(pz.ilosc) as 'ilość sprzedanych kopii'
+from pozycja_zamowienia pz inner join towar t on pz.towar=t.id_towaru
+group by towar
+order by sum(pz.ilosc) desc limit 10;
 ```
 # Zadanie 9 Wyświetl numer zamówienia, jego wartość (suma wartości wszystkich jego pozycji) zarejestrowanych w pierwszym kwartale 2017 roku.
 ```sql
