@@ -32,9 +32,15 @@ select t.nazwa_towaru, sum(pz.ilosc) as 'ilość sprzedanych kopii' from pozycja
 ```
 # Zadanie 9 Wyświetl numer zamówienia, jego wartość (suma wartości wszystkich jego pozycji) zarejestrowanych w pierwszym kwartale 2017 roku.
 ```sql
-select z.numer_zamowienia, sum(pz.ilosc*pz.cena) as 'wartość' from zamowienie z inner join pozycja_zamowienia pz on z.id_zamowienia=pz.zamowienie where z.data_zamowienia between '2017-01-01' and '2017-03-31' group by z.numer_zamowienia;
+select z.numer_zamowienia, sum(pz.ilosc*pz.cena) as 'wartość' 
+from zamowienie z inner join pozycja_zamowienia pz on z.id_zamowienia=pz.zamowienie 
+where z.data_zamowienia between '2017-01-01' and '2017-03-31' 
+group by z.numer_zamowienia;
 ```
 # Zadanie 10 Wyświetl imie, nazwisko i sumę wartości zamówień, które dany pracownik dodał. Posortuj malejąco po sumie.
 ```sql
-select p.imie, p.nazwisko, sum(pz.ilosc*pz.cena) as 'wartość' from zamowienie z inner join pozycja_zamowienia pz on z.id_zamowienia=pz.zamowienie inner join pracownik p on p.id_pracownika=z.pracownik_id_pracownika group by z.pracownik_id_pracownika order by sum(pz.ilosc*pz.cena) desc;
+select p.imie, p.nazwisko, sum(pz.ilosc*pz.cena) as 'wartość' 
+from zamowienie z inner join pozycja_zamowienia pz on z.id_zamowienia=pz.zamowienie inner join pracownik p on p.id_pracownika=z.pracownik_id_pracownika 
+group by z.pracownik_id_pracownika 
+order by sum(pz.ilosc*pz.cena) desc;
 ```
