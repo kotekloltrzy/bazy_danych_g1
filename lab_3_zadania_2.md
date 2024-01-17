@@ -50,8 +50,7 @@ from pracownik group by miesiac order by min(month(data_urodzenia)) asc;
 ```
 
 # Zadanie 10* Wyświetl imię i nazwisko pracownika i koszt jaki poniósł pracodawca od momentu jego zatrudnienia.
-
-    Nie aż tak trudne jak poszukać odpowiedniej funkcji operującej na datach.
+####Nie aż tak trudne jak poszukać odpowiedniej funkcji operującej na datach.
 
 ```sql
 select imie, nazwisko, (((((year(current_date())-year(data_zatrudnienia))*12)+month(current_date()))-month(data_zatrudnienia))*pensja) as "koszty zatrudnienia" from pracownik;
